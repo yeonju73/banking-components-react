@@ -12,7 +12,7 @@ const ComponentsExample = () => {
     return (
         <>
             <div className="w-full p-2">
-                <AccountNumberField  accountNumber={accountNumber} setAccountNumber={setAccountNumber} className='justify-self-center' />
+                <AccountNumberField accountNumber={accountNumber} setAccountNumber={setAccountNumber} className='justify-self-center' />
                 <BankOptionField accountBank={accountBank} setAccountBank={setAccountBank} bankList={bankList} className='justify-self-center'/>
             </div>
         </>

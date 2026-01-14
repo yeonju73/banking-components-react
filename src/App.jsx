@@ -4,6 +4,10 @@ import { banks } from './data/banks';
 import { useState } from 'react';
 import AccountNumberField from './components/account/AccountNumberField';
 import BankOptionField from './components/account/BankOptionField';
+import { parseClipboardText } from './utils/parseClipboardText';
+import ComponentsExample from './components/examples/ComponentsExample';
+import DefaultLayout from './layouts/DefaultLayout';
+import ConfirmButton from './components/account/ConfirmButton';
 
 
 const App = () => {
@@ -20,6 +24,14 @@ const App = () => {
           <AccountPasteSection setAccountNumber={setAccountNumber} setAccountBank={setAccountBank}/>
       </div>
     </div>
+    <DefaultLayout>
+      <ComponentsExample bankList = {banks}/>
+      <BankItemList banks={banks} />
+      {clipboardAccount && (
+        <AccountPasteSection data={clipboardAccount} />
+      )}
+      <ConfirmButton enabled={true} />
+    </DefaultLayout>
   )
 }
 
