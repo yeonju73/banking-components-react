@@ -42,7 +42,7 @@ const App = () => {
         <BankItemList banks={recommendedBanks} setAccountBank={setAccountBank} />
       )}
       <AccountPasteSection setAccountNumber={setAccountNumber} setAccountBank={setAccountBank}/>
-      <ConfirmButton enabled={true} />      
+      <ConfirmButton enabled={true} />
     </DefaultLayout>
   )
 }

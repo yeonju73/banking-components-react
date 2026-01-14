@@ -1,12 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const BankOptionField = ({ className, accountBank, setAccountBank, bankList }) => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef(null);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if(dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("touchstart", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("touchstart", handleClickOutside);
+        }
+    }, []);
 
     return (
-        <div className={`relative w-full max-w-xl m-3 block justify-self-center ${className}`}>
+        <div ref={dropdownRef} className={`relative w-full max-w-xl my-3 block justify-self-center ${className}`}>
             <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
