@@ -33,7 +33,7 @@ const AccountPasteItem = ({ bank, account }) => {
 
                     {/* 계좌번호 */}
                     <div
-                        className={`text-sm 'text-gray-500'}`}
+                        className={"text-sm 'text-gray-500"}
                     >
                         {account}
                     </div>

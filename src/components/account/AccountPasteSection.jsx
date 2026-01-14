@@ -1,6 +1,6 @@
 import AccountPasteItem from './AccountPasteItem';
 
-const AccountPasteSection = ({bank, account}) => {
+const AccountPasteSection = ({data}) => {
 
   return (
     <section className="mt-6">
@@ -9,8 +9,8 @@ const AccountPasteSection = ({bank, account}) => {
       </h3>
 
       <AccountPasteItem
-        bank={bank}
-        account={account}
+        bank={data.bank}
+        account={data.account}
       />
     </section>
   );

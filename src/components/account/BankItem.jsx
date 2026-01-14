@@ -9,8 +9,8 @@ const BankItem = ({ label, code, color, onClick }) => {
         bg-gray-100
         transition-all duration-150 ease-out
         hover:bg-gray-200 hover:-translate-y-[1px] hover:shadow-sm
-        focus-visible:ring-2 focus-visible:ring-gray-400
-        active:translate-y-0 active:shadow-none
+        focus-visible:ring-2 focus-visible:rnoneing-gray-400
+        active:scale-[0.98]
       "
     >
       <span
