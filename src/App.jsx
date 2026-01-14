@@ -3,6 +3,7 @@ import AccountPasteSection from './components/account/AccountPasteSection';
 import BankItemList from './components/account/BankItemList'
 import { banks } from './data/banks';
 import { parseClipboardText } from './utils/parseClipboardText';
+import ComponentsExample from './components/examples/ComponentsExample';
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
 
   return (
     <div>
+      <ComponentsExample bankList = {banks}/>
       <BankItemList banks={banks} />
       {clipboardAccount && (
         <AccountPasteSection data={clipboardAccount} />
