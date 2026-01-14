@@ -5,6 +5,7 @@ import { banks } from './data/banks';
 import { parseClipboardText } from './utils/parseClipboardText';
 import ComponentsExample from './components/examples/ComponentsExample';
 import DefaultLayout from './layouts/DefaultLayout';
+import ConfirmButton from './components/account/ConfirmButton';
 
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
       {clipboardAccount && (
         <AccountPasteSection data={clipboardAccount} />
       )}
+      <ConfirmButton enabled={true} />
     </DefaultLayout>
   )
 }
