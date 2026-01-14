@@ -1,8 +1,11 @@
-import React from 'react'
+import BankItemList from './components/acount/BankItemList'
+import { banks } from './data/banks';
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <BankItemList banks = {banks}/>
+    </div>
   )
 }
 
