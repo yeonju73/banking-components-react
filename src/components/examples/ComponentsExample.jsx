@@ -1,8 +1,11 @@
 import { useState } from "react";
 import AccountNumberField from "../account/AccountNumberField";
 import BankOptionField from "../account/BankOptionField";
+import { banks } from "../../data/banks";
 
-const ComponentsExample = ({bankList}) => {
+const bankList = banks
+
+const ComponentsExample = () => {
     const [accountNumber, setAccountNumber] = useState('');
     const [accountBank, setAccountBank] = useState('');
 

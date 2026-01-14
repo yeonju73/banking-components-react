@@ -6,7 +6,7 @@ const BankOptionField = ({ className, accountBank, setAccountBank, bankList }) =
 
 
     return (
-        <div className={`relative w-full max-w-xl m-3 block ${className}`}>
+        <div className={`relative w-full max-w-xl m-3 block justify-self-center ${className}`}>
             <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
