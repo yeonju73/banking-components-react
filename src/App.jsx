@@ -3,6 +3,9 @@ import AccountPasteSection from './components/account/AccountPasteSection';
 import BankItemList from './components/account/BankItemList'
 import { banks } from './data/banks';
 import { parseClipboardText } from './utils/parseClipboardText';
+import ComponentsExample from './components/examples/ComponentsExample';
+import DefaultLayout from './layouts/DefaultLayout';
+import ConfirmButton from './components/account/ConfirmButton';
 
 
 const App = () => {
@@ -30,12 +33,14 @@ const App = () => {
   }, []); // 컴포넌트가 처음 화면에 나타날 때 딱 한 번만 실행
 
   return (
-    <div>
+    <DefaultLayout>
+      <ComponentsExample bankList = {banks}/>
       <BankItemList banks={banks} />
       {clipboardAccount && (
         <AccountPasteSection data={clipboardAccount} />
       )}
-    </div>
+      <ConfirmButton enabled={true} />
+    </DefaultLayout>
   )
 }
 

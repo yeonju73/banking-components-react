@@ -13,7 +13,7 @@ const BankOptionField = ({ className, accountBank, setAccountBank, bankList }) =
                 className={`flex items-center justify-between w-full p-3 border border-black ${isOpen ? 'rounded-t-sm' : 'rounded-sm'} bg-white text-left`}
             >
                 <span className={accountBank === "" ? "text-gray-400" : "text-black"}>
-                    {accountBank ? bankList.find(bank => bank.id === accountBank)?.name : "은행"}
+                    {accountBank ? bankList.find(bank => bank.id === accountBank)?.label : "은행"}
                 </span>
                 <span className={`transition-transform duration-300 inline-block ${isOpen ? "rotate-180" : ""}`}>▼</span>
             </button>
@@ -31,7 +31,7 @@ const BankOptionField = ({ className, accountBank, setAccountBank, bankList }) =
                             }}
                             className="p-3 hover:bg-gray-100 cursor-pointer text-black border-b last:border-b-0"
                         >
-                            {bank.name}
+                            {bank.label}
                         </li>
                     ))
                 }
