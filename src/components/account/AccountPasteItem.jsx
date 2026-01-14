@@ -1,4 +1,4 @@
-const AccountPasteItem = ({ bank, account }) => {
+const AccountPasteItem = ({ bank, account, onClick }) => {
     return (
         <button
             type="button"
@@ -10,6 +10,7 @@ const AccountPasteItem = ({ bank, account }) => {
                 hover:bg-gray-200
                 active:scale-[0.98]
             "
+            onClick={() => onClick()}
         >
             <div className="flex items-center gap-3">
                 {/* 은행 정보가 있을 때만 */}

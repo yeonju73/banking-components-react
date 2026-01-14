@@ -25,7 +25,7 @@ const AccountNumberField = ({ accountNumber, setAccountNumber, className }) => {
 
     return (
         <>
-            <input type="text" inputMode="tel" placeholder='계좌번호' value={accountNumber} onChange={changeHandler} className={`rounded-sm border border-black w-full max-w-xl p-3 my-3 block ${className}`}></input>
+            <input type="text" inputMode="tel" placeholder='계좌번호' value={accountNumber} onChange={changeHandler} className={`rounded-sm border border-black w-full max-w-xl p-3 my-3 block justify-self-center ${className}`}></input>
         </>
     )
 }
