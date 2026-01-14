@@ -22,7 +22,7 @@ const BankOptionField = ({ className, accountBank, setAccountBank, bankList }) =
     }, []);
 
     return (
-        <div ref={dropdownRef} className={`relative w-full max-w-xl block justify-self-center ${className}`}>
+        <div ref={dropdownRef} className={`relative w-full max-w-xl my-3 block justify-self-center ${className}`}>
             <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
