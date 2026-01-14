@@ -72,7 +72,6 @@ const CardModal = ({ card, onClose }) => {
           </div>
         </div>
 
-        {/* 변경된 부분: benefits 배열 전달 */}
         <UsageSummary cardName={card.name} benefits={card.benefits} />
 
         <button

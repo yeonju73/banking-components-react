@@ -2,7 +2,6 @@ import React from "react";
 import UsageSummary from "../chart/UsageSummary";
 
 const ContractHeader = ({ card, dateTitle }) => {
-  // dateTitle이 없으면 기본값 '혜택 현황' 사용
   const title = dateTitle ? `${dateTitle} 혜택 현황` : "혜택 현황";
 
   return (
