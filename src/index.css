@@ -1,6 +1,56 @@
-/*Tailwind CSS 코드 불러오기*/
-@import "tailwindcss";
+:root {
+    /* 이미지 분석 색상 */
+    --color-primary-pink: #FF9E9E;
+    /* 내역 화면 포인트 색상 */
+    --color-primary-mint: #4CD9C0;
+    /* 카드 화면 포인트 색상 */
+    --color-bg-gray: #F5F6F8;
+    /* 앱 배경색 */
+    --color-text-main: #333333;
+    --color-text-sub: #888888;
+    --color-white: #FFFFFF;
 
-html, body, #root {
-    @apply w-full h-full;
+    /* 레이아웃 변수 */
+    --app-max-width: 420px;
+    /* 모바일 너비 제한 */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #e0e0e0;
+    /* 데스크탑 배경은 어둡게 */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* 모바일 앱 컨테이너 스타일 */
+#root {
+    width: 100%;
+    max-width: var(--app-max-width);
+    background-color: var(--color-white);
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 공통 유틸리티 */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
 }
