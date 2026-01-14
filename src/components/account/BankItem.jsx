@@ -1,8 +1,12 @@
-const BankItem = ({ label, code, color, onClick }) => {
+const BankItem = ({ label, code, color, setAccountBank, bankId }) => {
+  const clickHandler = () => {
+    setAccountBank(bankId);
+  }
+
   return (
     <button
       type="button"
-      onClick={onClick}
+      onClick={clickHandler}
       className="
         rounded-xl px-3 py-2
         flex items-center gap-2 text-left
