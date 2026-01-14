@@ -4,12 +4,12 @@ const BankItem = ({ label, code, color, onClick }) => {
       type="button"
       onClick={onClick}
       className="
-        flex-1 rounded-xl px-3 py-2
+        rounded-xl px-3 py-2
         flex items-center gap-2 text-left
         bg-gray-100
         transition-all duration-150 ease-out
         hover:bg-gray-200 hover:-translate-y-[1px] hover:shadow-sm
-        focus:outline-none focus:ring-2 focus:ring-black
+        focus-visible:ring-2 focus-visible:ring-gray-400
         active:translate-y-0 active:shadow-none
       "
     >
