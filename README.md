@@ -1,4 +1,4 @@
-# banking-components-react
+# 우리 FISA 금융 React 컴포넌트 프로젝트
 
 ## 개요
 이 프로젝트는 금융 관련 UI/UX 컴포넌트를 제공하는 리액트 컴포넌트 라이브러리입니다.  
