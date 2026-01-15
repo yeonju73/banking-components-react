@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "./index.js"),
-      name: "@woori-fisa/acccount-form",
+      name: "@woori-fisa-6th/banking-util",
       fileName: (format) => `index.${format}.js`
     },
     rollupOptions: {

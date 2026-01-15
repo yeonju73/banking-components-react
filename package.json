@@ -1,7 +1,7 @@
 {
-  "name": "woori-fisa-account-form",
+  "name": "@woori-fisa-6th/banking-util",
   "private": false,
-  "version": "1.0.8",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
