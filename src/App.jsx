@@ -3,6 +3,9 @@ import ContractHeader from "./components/history/ContractHeader";
 import ContractBody from "./components/history/ContractBody";
 import CardPage from "./components/cards/CardPage";
 import CardModal from "./components/cards/CardModal";
+import { banks } from "./data/banks";
+import { useAccountFormState } from "./hooks/useAccountFormState";
+import AccountForm from "./components/AccountForm";
 
 const CURRENT_DATE = new Date("2026-01-14");
 
@@ -224,67 +227,10 @@ function App() {
     CURRENT_DATE.getMonth() + 1
   }월 ${CURRENT_DATE.getDate()}일`;
 
-  return (
-    <div
-      style={{
-        maxWidth: "420px",
-        margin: "0 auto",
-        minHeight: "100vh",
-        backgroundColor: "#F5F6F8",
-      }}
-    >
-      {view === "history" && (
-        <>
-          <div onClick={() => setView("cards")} style={{ cursor: "pointer" }}>
-            <ContractHeader card={mainCard} dateTitle={todayTitle} />
-            <div
-              style={{
-                textAlign: "center",
-                padding: "12px",
-                fontSize: "12px",
-                color: "#888",
-                backgroundColor: "#fff",
-                borderTop: "1px solid #f0f0f0",
-              }}
-            >
-              👇 터치하여 전체 카드 보기
-            </div>
-          </div>
-          <ContractBody transactions={transactionList} />
-        </>
-      )}
+  const myAccount = useAccountFormState();
 
-      {view === "cards" && (
-        <div
-          style={{
-            padding: "20px",
-            backgroundColor: "#fff",
-            minHeight: "100vh",
-          }}
-        >
-          <button
-            onClick={() => setView("history")}
-            style={{
-              marginBottom: "20px",
-              fontSize: "16px",
-              fontWeight: "bold",
-            }}
-          >
-            ← 돌아가기
-          </button>
-          <CardPage
-            cards={processedCards}
-            onCardClick={(card) => setSelectedCardId(card.id)}
-          />
-        </div>
-      )}
-      {selectedCard && (
-        <CardModal
-          card={selectedCard}
-          onClose={() => setSelectedCardId(null)}
-        />
-      )}
-    </div>
+  return (
+    <AccountForm accountState={myAccount} banks={banks}/>
   );
 }
 

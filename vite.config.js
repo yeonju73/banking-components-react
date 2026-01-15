@@ -4,17 +4,44 @@
 
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from "@tailwindcss/postcss"
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import { resolve } from "path";
+
 
 // https://vite.dev/config/
 export default defineConfig({
+  build: {
+    lib: {
+      entry: resolve(__dirname, "./index.js"),
+      name: "@woori-fisa/acccount-form",
+      fileName: (format) => `index.${format}.js`
+    },
+    rollupOptions: {
+      external: ["react", "react-dom", "tailwindcss"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          tailwindcss: "tailwindcss"
+        }
+      }
+    },
+    // sourcemap: true,
+    emptyOutDir: true
+  },
   plugins: [
     react(),
-    tailwindcss()
+    cssInjectedByJsPlugin()
   ],
   resolve: {
     alias: [
       {find: '@', replacement: '/src'}
     ]
+  },
+  css: {
+    postcss: {
+      plugins: [tailwindcss()]
+    }
   }
 })
